@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- Sekmedeki Küçük Profil Simgesi (Favicon) -->
-<link rel="icon" href="images.jpeg" type="image/jpeg">
-
-<!-- WhatsApp ve Sosyal Medya Paylaşım Resmi -->
-<meta property="og:image" content="https://obacagkebap.github.io/Oba-Ca-Kebap/images.jpeg">
-<meta property="og:title" content="Oba Cağ Kebabı | Darıca, Kocaeli">
-<meta property="og:description" content="Erzurum usulü odun ateşinde gerçek cağ kebabı Darıca'da.">
-  <meta name="google-site-verification" content="VI6kHgbrxH028nBB4Dd9BPPx9ebM3RPml5tb61TJMfo" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Oba Cağ Kebabı | Darıca, Kocaeli</title>
+
+<!-- Sekmedeki Profil Simgesi ve WhatsApp Önizlemesi -->
+<link rel="icon" type="image/jpeg" href="images.jpg">
+<meta property="og:image" content="https://obacagkebap.github.io/Oba-Cag-Kebap/images.jpg">
+<meta property="og:title" content="Oba Cağ Kebabı | Darıca, Kocaeli">
+<meta property="og:description" content="Erzurum usulü odun ateşinde gerçek cağ kebabı Darıca'da.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -43,6 +42,8 @@ img{max-width:100%;}
 /* NAV */
 nav{position:sticky; top:0; top:env(safe-area-inset-top,0px); z-index:50; background:rgba(28,22,19,0.9); backdrop-filter:blur(8px); border-bottom:1px solid var(--line);}
 .nav-inner{max-width:1040px; margin:0 auto; padding:16px 24px; display:flex; justify-content:space-between; align-items:center;}
+.brand-box{display:flex; align-items:center; gap:12px; text-decoration:none;}
+.brand-logo{width:36px; height:36px; border-radius:6px; object-fit:cover; border:1px solid var(--line);}
 .brand{font-family:'Fraunces',serif; font-size:20px; font-weight:600; color:var(--ink);}
 .brand span{color:var(--ember);}
 .nav-links{display:flex; gap:28px; font-size:15px;}
@@ -85,18 +86,14 @@ nav{position:sticky; top:0; top:env(safe-area-inset-top,0px); z-index:50; backgr
 .menu-notice{max-width:520px; margin:0 auto; text-align:center; background:var(--bg-card); border:1px dashed var(--line); border-radius:6px; padding:28px 24px; color:var(--ink-dim); font-size:15px;}
 .menu-notice a{color:var(--gold); text-decoration:underline;}
 
-/* GALLERY - CSS illustrated */
+/* GALLERY */
 .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-.g-tile{aspect-ratio:1; border-radius:6px; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:16px;}
-.g-tile span{font-size:13px; color:var(--ink); position:relative; z-index:2;}
-.g-tile::before{content:""; position:absolute; inset:0; opacity:0.9;}
-.g1::before{background:radial-gradient(circle at 30% 20%, #2E6BE6, #050A14 75%);}
-.g2::before{background:radial-gradient(circle at 70% 30%, #6FA3F5, #0B0F18 75%);}
-.g3::before{background:radial-gradient(circle at 50% 70%, #1E4DAD, #05070C 75%);}
-.g4::before{background:radial-gradient(circle at 40% 60%, #0B0F18, #2E6BE6 120%);}
-.g5::before{background:radial-gradient(circle at 60% 40%, #6FA3F5, #05070C 80%);}
-.g6::before{background:radial-gradient(circle at 50% 50%, #1E4DAD, #0B0F18 80%);}
-.gallery-note{color:var(--ink-dim); font-size:14px; margin-top:16px; text-align:center;}
+.g-tile{aspect-ratio:1; border-radius:8px; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:16px; background:var(--bg-card); border:1px solid var(--line);}
+.g-tile img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform .3s ease;}
+.g-tile:hover img{transform:scale(1.05);}
+.g-tile span{font-size:13px; font-weight:500; color:#fff; position:relative; z-index:2; background:rgba(5,7,12,0.75); padding:4px 10px; border-radius:4px; backdrop-filter:blur(4px);}
+@media(max-width:760px){.gallery{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.gallery{grid-template-columns:1fr;}}
 
 /* HOURS + MAP */
 .info-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
@@ -139,7 +136,10 @@ footer a{color:var(--gold); text-decoration:none;}
 
 <nav>
   <div class="nav-inner">
-    <div class="brand">OBA <span>CAĞ</span> KEBABI</div>
+    <div class="brand-box">
+      <img src="images.jpg" alt="Oba Cağ Kebabı Logo" class="brand-logo">
+      <div class="brand">OBA <span>CAĞ</span> KEBABI</div>
+    </div>
     <div class="nav-links">
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#menu">Menü</a>
@@ -209,12 +209,12 @@ footer a{color:var(--gold); text-decoration:none;}
       <h2>Mekândan kareler</h2>
     </div>
     <div class="gallery">
-      <div class="g-tile"><img src="foto1.jpg" alt="Oba Cağ Kebabı" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"><span>Cağ Kebabı</span></div>
-      <div class="g-tile"><img src="foto2.jpg" alt="Odun Ateşi" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"><span>Odun Ateşi</span></div>
-      <div class="g-tile"><img src="foto3.jpg" alt="Mangal Başı" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"><span>Mangal Başı</span></div>
-      <div class="g-tile"><img src="foto4.jpg" alt="Erzurum Kadayıfı" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"><span>Erzurum Kadayıf</span></div>
-      <div class="g-tile"><img src="foto5.jpg" alt="Restoran Salonu" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"><span>Salon</span></div>
-      <div class="g-tile"><img src="foto6.jpg" alt="İkram Masası" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;"><span>Sofra</span></div>
+      <div class="g-tile"><img src="unnamed.webp" alt="Oba Cağ Kebabı"><span style="display:none;"></span></div>
+      <div class="g-tile"><img src="unnamed%20(1).webp" alt="Dükkan İçi"><span style="display:none;"></span></div>
+      <div class="g-tile"><img src="unnamed%20(2).webp" alt="Ocak Başı"><span style="display:none;"></span></div>
+      <div class="g-tile"><img src="unnamed%20(3).webp" alt="Sofra ve Servis"><span style="display:none;"></span></div>
+      <div class="g-tile"><img src="unnamed%20(4).webp" alt="Dükkan Detay"><span style="display:none;"></span></div>
+      <div class="g-tile"><img src="unnamed%20(5).webp" alt="Restoran Girişi"><span style="display:none;"></span></div>
     </div>
   </div>
 </section>
@@ -225,7 +225,7 @@ footer a{color:var(--gold); text-decoration:none;}
       <span class="eyebrow">ÇALIŞMA SAATLERİ</span>
       <h2 style="font-size:32px; margin:10px 0 24px;">Ne zaman açığız</h2>
       <table class="hours-table">
-        <tr class="closed"><td>Pazartesi</td><td>Kapalıyız</td></tr>
+        <tr><td>Pazartesi</td><td>10:00 – 22:00</td></tr>
         <tr><td>Salı</td><td>10:00 – 22:00</td></tr>
         <tr><td>Çarşamba</td><td>10:00 – 22:00</td></tr>
         <tr><td>Perşembe</td><td>10:00 – 22:00</td></tr>
